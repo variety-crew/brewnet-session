@@ -1,8 +1,8 @@
-# 베이스 이미지 설정
+# Redis Dockerfile
 FROM redis:alpine
 
-# Redis 설정 파일 복사 (필요한 경우)
+# copy redis config file (Optional)
 COPY ./redis.conf /usr/local/etc/redis/redis.conf
 
-# Redis 시작 시 커스텀 설정을 적용하여 실행
+# run Redis server
 CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
